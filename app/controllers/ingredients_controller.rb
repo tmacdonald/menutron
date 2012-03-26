@@ -10,6 +10,10 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
   end
 
+  def alphabetical
+    @ingredients = Ingredient.all
+  end
+
   # GET /ingredients/new
   # GET /ingredients/new.json
   def new

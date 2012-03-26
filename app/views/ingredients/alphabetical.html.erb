@@ -1,0 +1,11 @@
+<% alphabetical_ingredients = @ingredients.group_by { |i| i.name.first.upcase } %>
+
+<% alphabetical_ingredients.each do |letter, ingredients| %>
+  <h1><%= letter %></h1>
+  <ul>
+  <% ingredients.each do |i| %>
+    <li><%= i.name %></li>
+  <% end %>
+  </ul>
+<% end %>
+    

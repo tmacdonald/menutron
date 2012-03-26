@@ -1,5 +1,9 @@
 Menutron::Application.routes.draw do
-  resources :ingredients
+  resources :ingredients do
+    collection do 
+      get :alphabetical
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
