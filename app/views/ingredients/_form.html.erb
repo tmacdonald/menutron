@@ -1,29 +1,16 @@
-<%= simple_form_for(@ingredient) do |f| %>
-  <% if @ingredient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
+<%= simple_form_for @ingredient, :html => { :class => 'form-vertical' } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> Ingredient</legend>
 
-      <ul>
-      <% @ingredient.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+    <%= f.input :name %>
+
+    <%= f.association :category %>
+
+    <%= f.association :grocery_category %>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', ingredients_path, :class => 'btn' %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :grocery_category %><br />
-    <%= f.text_field :grocery_category %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </fieldset>
 <% end %>

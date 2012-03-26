@@ -1,20 +1,27 @@
-<p id="notice"><%= notice %></p>
+<h1>Ingredient</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Name</b><br>
   <%= @ingredient.name %>
 </p>
 
 <p>
-  <b>Category:</b>
-  <%= @ingredient.category.name %>
+  <b>Ingredient category</b><br>
+  <%= @ingredient.ingredient_category_id %>
 </p>
 
 <p>
-  <b>Grocery category:</b>
-  <%= @ingredient.grocery_category.name %>
+  <b>Grocery category</b><br>
+  <%= @ingredient.grocery_category_id %>
 </p>
 
+<p>
+  <b>Slug</b><br>
+  <%= @ingredient.slug %>
+</p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
-<%= link_to 'Back', ingredients_path %>
+<div class="form-actions">
+  <%= link_to 'Back', ingredients_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_ingredient_path(@ingredient), :class => 'btn' %>
+  <%= link_to 'Delete', ingredient_path(@ingredient), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

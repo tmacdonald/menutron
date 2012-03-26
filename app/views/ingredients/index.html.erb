@@ -1,27 +1,26 @@
-<h1>Listing ingredients</h1>
-
+<h1>Ingredients</h1>
 <table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Ingredient category</th>
-    <th>Grocery category</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ingredients.each do |ingredient| %>
-  <tr>
-    <td><%= ingredient.name %></td>
-    <td><%= ingredient.category.name %></td>
-    <td><%= ingredient.grocery_category.name %></td>
-    <td><%= link_to 'Show', ingredient %></td>
-    <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-    <td><%= link_to 'Destroy', ingredient, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.id %></td>
+        <td><%= link_to ingredient.name, ingredient_path(ingredient) %></td>
+        <td><%= ingredient.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_ingredient_path(ingredient), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', ingredient_path(ingredient), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= link_to 'New', new_ingredient_path, :class => 'btn btn-primary' %>
