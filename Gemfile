@@ -17,9 +17,15 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '1.2.3'
+
+  gem 'twitter-bootstrap-rails', '2.0.3'
 end
 
 gem 'jquery-rails', '2.0.1'
+
+gem 'rabl', '0.6.1'
+
+gem 'simple_form', '2.0.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
