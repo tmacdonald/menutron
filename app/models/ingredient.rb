@@ -6,6 +6,8 @@ class Ingredient < ActiveRecord::Base
   belongs_to :category, :foreign_key => :ingredient_category_id, :class_name => "IngredientCategory"
   belongs_to :grocery_category
 
+  default_scope includes(:category, :grocery_category)
+
   def to_param
     "#{id}-#{slug}"
   end
