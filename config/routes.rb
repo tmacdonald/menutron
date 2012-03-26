@@ -5,6 +5,8 @@ Menutron::Application.routes.draw do
     end
   end
 
+  resources :ingredient_categories, :only => [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

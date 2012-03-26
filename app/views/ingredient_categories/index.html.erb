@@ -1,0 +1,8 @@
+<% @ingredient_categories.each do |ingredient_category| %>
+  <h2><%= ingredient_category.name %></h2>
+  <ul>
+  <% ingredient_category.ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %>
+  <% end %>
+  </ul>
+<% end %>
