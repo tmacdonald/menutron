@@ -1,6 +1,6 @@
 <h1>Listing ingredients</h1>
 
-<table>
+<table class="table table-striped">
   <tr>
     <th>Name</th>
     <th>Ingredient category</th>
@@ -13,8 +13,8 @@
 <% @ingredients.each do |ingredient| %>
   <tr>
     <td><%= ingredient.name %></td>
-    <td><%= ingredient.ingredient_category %></td>
-    <td><%= ingredient.grocery_category %></td>
+    <td><%= ingredient.category.name %></td>
+    <td><%= ingredient.grocery_category.name %></td>
     <td><%= link_to 'Show', ingredient %></td>
     <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
     <td><%= link_to 'Destroy', ingredient, confirm: 'Are you sure?', method: :delete %></td>

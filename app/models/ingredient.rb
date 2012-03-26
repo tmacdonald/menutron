@@ -3,7 +3,7 @@ class Ingredient < ActiveRecord::Base
   
   validates :name, :presence => true
 
-  belongs_to :ingredient_category
+  belongs_to :category, :foreign_key => :ingredient_category_id, :class_name => "IngredientCategory"
   belongs_to :grocery_category
 
   def to_param
