@@ -27,6 +27,9 @@ gem 'rabl', '0.6.1'
 
 gem 'simple_form', '2.0.1'
 
+gem 'activeadmin', '0.4.3'
+gem 'meta_search', '1.1.3'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
