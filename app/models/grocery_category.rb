@@ -3,6 +3,8 @@ class GroceryCategory < ActiveRecord::Base
 
   validates :name, :presence => true
 
+  has_many :ingredients
+
   def to_param
     "#{id}-#{slug}"
   end
