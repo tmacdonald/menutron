@@ -1,0 +1,3 @@
+collection @ingredients
+
+attributes :name
