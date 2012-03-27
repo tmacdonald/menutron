@@ -4,9 +4,9 @@
 
     <%= f.input :name %>
 
-    <%= f.association :category %>
+    <%= f.association :category, :include_blank => "Miscellaneous" %>
 
-    <%= f.association :grocery_category %>
+    <%= f.association :grocery_category, :include_blank => "Miscellaneous" %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
