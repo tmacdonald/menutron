@@ -1,4 +1,6 @@
 Menutron::Application.routes.draw do
+  resources :recipes
+
   resources :ingredients do
     collection do 
       get :alphabetical

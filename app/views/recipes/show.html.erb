@@ -1,0 +1,17 @@
+<h1>Recipe</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <b>Servings</b><br>
+  <%= @recipe.servings %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', recipes_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_recipe_path(@recipe), :class => 'btn' %>
+  <%= link_to 'Delete', recipe_path(@recipe), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
