@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120327013809) do
+ActiveRecord::Schema.define(:version => 20120327014710) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -76,6 +76,21 @@ ActiveRecord::Schema.define(:version => 20120327013809) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "recipe_ingredients", :force => true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.integer  "measurement_id"
+    t.string   "text"
+    t.decimal  "amount"
+    t.string   "preparation"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "recipe_ingredients", ["ingredient_id"], :name => "index_recipe_ingredients_on_ingredient_id"
+  add_index "recipe_ingredients", ["measurement_id"], :name => "index_recipe_ingredients_on_measurement_id"
+  add_index "recipe_ingredients", ["recipe_id"], :name => "index_recipe_ingredients_on_recipe_id"
 
   create_table "recipes", :force => true do |t|
     t.string   "name"

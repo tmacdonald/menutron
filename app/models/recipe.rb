@@ -3,6 +3,8 @@ class Recipe < ActiveRecord::Base
 
   validates :name, :presence => true
 
+  has_many :ingredients, :foreign_key => :recipe_id, :class_name => "RecipeIngredient"
+
   def create_slug
     self.slug = self.name.parameterize
   end
