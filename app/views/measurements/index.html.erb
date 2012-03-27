@@ -1,0 +1,19 @@
+<h1>Measurements</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Created at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @measurements.each do |measurement| %>
+      <tr>
+        <td><%= measurement.id %></td>
+        <td><%= link_to measurement.name, measurement_path(measurement) %></td>
+        <td><%= measurement.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

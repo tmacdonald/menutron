@@ -1,4 +1,6 @@
 Menutron::Application.routes.draw do
+  resources :measurements, :only => [:index, :show]
+
   resources :recipes
 
   resources :ingredients do

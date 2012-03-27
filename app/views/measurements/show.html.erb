@@ -1,0 +1,22 @@
+<h1>Measurement</h1>
+
+<p>
+  <b>Name</b><br>
+  <%= @measurement.name %>
+</p>
+
+<p>
+  <b>Regex</b><br>
+  <%= @measurement.regex %>
+</p>
+
+<p>
+  <b>Slug</b><br>
+  <%= @measurement.slug %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', measurements_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_measurement_path(@measurement), :class => 'btn' %>
+  <%= link_to 'Delete', measurement_path(@measurement), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
