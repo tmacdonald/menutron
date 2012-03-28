@@ -1,0 +1,3 @@
+object @direction
+
+attributes :text

@@ -3,7 +3,7 @@ Menutron::Application.routes.draw do
 
   resources :recipes do
     resources :ingredients, :controller => "recipes/ingredients"
-    resources :directions
+    resources :directions, :controller => "recipes/directions"
   end
 
   resources :ingredients do

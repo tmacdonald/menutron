@@ -1,0 +1,3 @@
+collection @directions
+
+attributes :text
