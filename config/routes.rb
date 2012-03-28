@@ -1,7 +1,10 @@
 Menutron::Application.routes.draw do
   resources :measurements, :only => [:index, :show]
 
-  resources :recipes
+  resources :recipes do
+    resources :ingredients, :controller => "recipes/ingredients"
+    resources :directions
+  end
 
   resources :ingredients do
     collection do 

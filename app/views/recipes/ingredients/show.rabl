@@ -1,0 +1,3 @@
+object @ingredient
+
+attributes :text
